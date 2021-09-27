@@ -9,14 +9,20 @@ contract MySmartContract {
     IERC20 public dai;
     PiperToken public pToken;
 
+    event Send(uint amount);
+    event Unsend(uint amount);
+    
     address[] public investers;
     mapping(address => uint) public investingBalance;
     mapping(address => bool) public hasInvested;
     mapping(address => bool) public isInvesting;
+
+
+
     constructor(address _daiToken, PiperToken _pToken) {
         dai = IERC20(_daiToken);
-	pToken = _pToken;
-	owner = msg.sender;
+	    pToken = _pToken;
+	    owner = msg.sender;
     }
 
     function bal() view public returns (uint) {
@@ -29,7 +35,7 @@ contract MySmartContract {
 
         // Trasnfer Mock Dai tokens to this contract for investing
         dai.transferFrom(msg.sender, address(this), _amount);
-	pToken.transfer(msg.sender, _amount);
+	    pToken.transfer(msg.sender, _amount);
 
         // Update investing balance
         investingBalance[msg.sender] = investingBalance[msg.sender] + _amount;
@@ -42,6 +48,8 @@ contract MySmartContract {
         // Update investing status
         isInvesting[msg.sender] = true;
         hasInvested[msg.sender] = true;
+
+        emit Send(_amount);
     }
 
     function withdraw() public {
@@ -59,6 +67,7 @@ contract MySmartContract {
 
         // Update investing status
         isInvesting[msg.sender] = false;
+        emit Unsend(balance);
     }
 	
 	
