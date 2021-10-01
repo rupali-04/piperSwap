@@ -188,10 +188,10 @@ const abi = [
     }
   ];
   var account = '0x809C038a02791B18C06ed7947B2c74F41EC2700D';
-  var address = '0x4f96fe3b7a6cf9725f59353f723c1bdb64ca6aa';
+  var address = '0x4F96Fe3b7A6Cf9725f59d353F723c1bDb64CA6Aa';
   module.exports = async function(callback) {
     const mySmartContract = await MySmartContract.deployed();
-    const dai = await TruffleContract.at('0x4f96fe3b7a6cf9725f59d353f723c1bdb64ca6aa');
+    const dai = await TruffleContract.at('0x4F96Fe3b7A6Cf9725f59d353F723c1bDb64CA6Aa');
     var contract = new web3.eth.Contract(abi,address);
     //var dai = await contract.clone();
     console.log(dai.address);

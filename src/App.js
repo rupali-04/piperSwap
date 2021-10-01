@@ -21,7 +21,7 @@ class App extends Component {
     this.setState({ account: accounts[0] })
 
     const networkId = 42
-    const daiAddress = '0x4f96fe3b7a6cf9725f59d353f723c1bdb64ca6aa';
+    const daiAddress = '0x4F96Fe3b7A6Cf9725f59d353F723c1bDb64CA6Aa';
 
     // Load DaiToken
     const daiTokenData = 42
@@ -65,7 +65,7 @@ class App extends Component {
       await window.ethereum.enable()
     }
     else if (window.web3) {
-      window.web3 = new Web3(window.web3.currentProvider)
+      window.web3 = new Web3('https://kovan.infura.io/v3/e8d5474e44074334b5f281433b5c3b7c')
     }
     else {
       window.alert('Non-Ethereum browser detected. You should consider trying MetaMask!')

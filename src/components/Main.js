@@ -12,8 +12,8 @@ class Main extends Component {
         <table className="table table-borderless text-muted text-center">
           <thead>
             <tr>
-              <th scope="col">Staking Balance</th>
-              <th scope="col">Reward Balance</th>
+              <th scope="col">Investing Balance</th>
+              <th scope="col">Profits Balance</th>
             </tr>
           </thead>
           <tbody>
@@ -36,8 +36,9 @@ class Main extends Component {
                 this.props.stakeTokens(amount)
               }}>
               <div>
-                <label className="float-left"><b>Stake Tokens</b></label>
+                <label className="float-left"><b>Invest Tokens </b></label>
                 <span className="float-right text-muted">
+                <br />
                   Balance: {window.web3.utils.fromWei(this.props.daiTokenBalance, 'Ether')}
                 </span>
               </div>
@@ -55,7 +56,7 @@ class Main extends Component {
                   </div>
                 </div>
               </div>
-              <button type="submit" className="btn btn-primary btn-block btn-lg">STAKE!</button>
+              <button type="submit" className="btn btn-primary btn-block btn-lg">Invest!</button>
             </form>
             <button
               type="submit"
@@ -64,7 +65,7 @@ class Main extends Component {
                 event.preventDefault()
                 this.props.unstakeTokens()
               }}>
-                UN-STAKE...
+                Withdraw...
               </button>
           </div>
         </div>
