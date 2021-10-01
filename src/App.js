@@ -5,6 +5,7 @@ import PiperToken from '../src/build/contracts/PiperToken.json'
 import TokenFarm from '../src/build/contracts/MySmartContract.json'
 import Navbar from './components/Navbar'
 import Main from './components/Main'
+import "./components/App.css"
 
 class App extends Component {
   

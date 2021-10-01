@@ -13,7 +13,10 @@ class Navbar extends Component {
           rel="noopener noreferrer"
         >
           <img src={farmer} width="30" height="30" className="d-inline-block align-top" alt="" />
+
+          &nbsp; Piper Token 
            Dapp farm
+
         </a>
 
         <ul className="navbar-nav px-3">
