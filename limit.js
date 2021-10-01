@@ -48,7 +48,7 @@ async function createLimitOrder(livetime){
         const timestampBelow = new LimitOrder.LimitOrderPredicateBuilder(limitOrderProtocolFacade);
     // Create a limit order and it's signature
     let simplePredicate = timestampBelow.timestampBelow(Math.round(Date.now() / 1000) + livetime);
-    //console.log(simplePredicate);
+    
     const limitOrder = await limitOrderBuilder.buildLimitOrder({
         makerAssetAddress: '0x4F96Fe3b7A6Cf9725f59d353F723c1bDb64CA6Aa',
         takerAssetAddress: '0xd0a1e359811322d97991e03f863a0c30c2cf029c',
@@ -59,13 +59,13 @@ async function createLimitOrder(livetime){
        
         
     });
-    //console.log(limitOrder);
+    console.log(limitOrder);
     const limitOrderTypedData = await limitOrderBuilder.buildLimitOrderTypedData(
         limitOrder
     );
     
     //console.log(limitOrderHash);
-    //console.log(limitOrderTypedData);
+    console.log(limitOrderTypedData.message);
     //console.log('hey');
     // console.log(await connector.web3Provider.currentProvider.send({"jsonrpc":"2.0","method":"eth_signTypedData_v4","params":[
     //     walletAddress,
