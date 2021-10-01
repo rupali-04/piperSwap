@@ -3,16 +3,49 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^11.2.7",
+    "@testing-library/user-event": "^12.8.3",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-scripts": "4.0.3",
+    "web-vitals": "^1.1.2",
+    "@1inch/limit-order-protocol": "^1.4.0",
     "@openzeppelin/contracts": "^4.3.2",
     "@truffle/hdwallet-provider": "^1.5.0",
+    "@walletconnect/web3-provider": "^1.6.5",
+    "axios": "^0.21.4",
+    "create-react-app": "^4.0.3",
     "ganache-cli": "^6.12.2",
-    "solc": "^0.8.0"
+    "solc": "^0.8.0",
+    "web3": "^1.5.3"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }

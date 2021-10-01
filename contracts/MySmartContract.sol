@@ -2,6 +2,7 @@
 pragma solidity ^0.8.0;
 
 import '@openzeppelin/contracts/token/ERC20/IERC20.sol';
+import '@openzeppelin/contracts/token/ERC20/ERC20.sol';
 import "./PiperToken.sol";
 
 contract MySmartContract {
@@ -29,7 +30,7 @@ contract MySmartContract {
         return dai.balanceOf(address(msg.sender));
     }
     
-    function investTokens(uint _amount) public {
+    function investTokens(uint _amount) external payable {
         // Require amount greater than 0
         require(_amount > 0, "amount cannot be 0");
 
@@ -68,6 +69,10 @@ contract MySmartContract {
         // Update investing status
         isInvesting[msg.sender] = false;
         emit Unsend(balance);
+
+        // 1 week Dai -> piperCoin X -> thoughts 
+        // 1 inch limit order on Dai 
+        // Frontend  
     }
 	
 	

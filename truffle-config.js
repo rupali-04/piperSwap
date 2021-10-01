@@ -8,12 +8,12 @@ module.exports = {
    port:  7545,
    network_id: "*"
   },
-  rinkeby: {
+  kovan: {
       provider: function() { 
-       return new HDWalletProvider(mnemonic, "https://rinkeby.infura.io/v3/e8d5474e44074334b5f281433b5c3b7c");
+       return new HDWalletProvider(mnemonic, "https://speedy-nodes-nyc.moralis.io/79556231d8f053fbadc2f797/eth/kovan");
       },
       from: "0x809C038a02791B18C06ed7947B2c74F41EC2700D",
-      network_id: 4,
+      network_id: 42,
       gas: 4500000,
       gasPrice: 10000000000,
   }
