@@ -1,12 +1,29 @@
 # piperSwap
 Decentralized Exchange Application 
 
-Welcome to PiperSwap this is an ongoing Project by Team Piped-piper for DecentralHacks 2021.
+PiperSwap is a Decentralized Exchange Application where we have created a Platform which would accept Tokens from the User and in return will provide some PToken (Piper Token).
 
-1. This Project is build with Truffle, Web3.js, Solidity and Javascript.
-2. We have used Rinkeby TestNet to Deploy our Project in Ethereum Blockchain.
+Working of the Application:
+1. Connect your Metamask Wallet with the Application.
+2. Enter the amount of Dai Token you need to invest.
+3. You will recive some PiperToken in return of the Dai Token
 
-Working State of the Project: We have till now created an ERC20 Token PiperToken and we are using dai Stablecoin to swap Dai for Pipertoken.
+Internal Working of the System:
+1. The Dai Token recived from the user will be used to set Limit Orders using 1inch Limit-Order-Protocol
+2. This Limit Order will be set Automatically at an interval.
+3.  MakerAsset: '0x4F96Fe3b7A6Cf9725f59d353F723c1bDb64CA6Aa' (Dai)
+    TakerAsset: '0xd0a1e359811322d97991e03f863a0c30c2cf029c' (WEth)
 
-Future Plans of the Project: We are going to use 1inch Protocol so that we can set a Limit order on the Token we have recived from the Invester
-and swap the Dai stablecoin to WETH.
+Commands to Run Project:
+1. Clone the Repo
+2. run npm install
+3. React App: npm run start
+4. Limit-order App: truffle --network kovan limit.js
+
+Some Important Address:
+Token Address: '0x4F96Fe3b7A6Cf9725f59d353F723c1bDb64CA6Aa' (Dai)
+               '0xd0a1e359811322d97991e03f863a0c30c2cf029c' (WEth)
+Contract Address: '0x2BC7E7123CDFdA75722E1E745098FA8016731602'
+1inch Limit Order Address: '0x94Bc2a1C732BcAd7343B25af48385Fe76E08734f'
+
+    
