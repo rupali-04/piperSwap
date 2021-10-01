@@ -5,7 +5,7 @@ module.exports = async function (deployer,network,accounts) {
     await deployer.deploy(PiperToken);
     const PToken = await PiperToken.deployed();
     const dToken = await DaiToken.at('0x4f96fe3b7a6cf9725f59353f723c1bdb64ca6aa');
-    await deployer.deploy(MySmartContract,'0xc7AD46e0b8a400Bb3C915120d284AafbA8fc4735',PToken.address);
+    await deployer.deploy(MySmartContract,'0x4f96fe3b7a6cf9725f59353f723c1bdb64ca6aa',PToken.address);
     await MySmartContract.deployed();
 
     // Transfer all tokens to MySmartContract (1 million)
