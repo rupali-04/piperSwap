@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
 import dai from '../dai.png'
+import "./App.css"
 
 class Main extends Component {
 
   render() {
     return (
+      <div className="card mb-4" >
       <div id="content" className="mt-3">
 
         <table className="table table-borderless text-muted text-center">
@@ -21,8 +23,8 @@ class Main extends Component {
             </tr>
           </tbody>
         </table>
-
-        <div className="card mb-4" >
+         
+        {/* <div className="card mb-4" > */}
 
           <div className="card-body">
 
