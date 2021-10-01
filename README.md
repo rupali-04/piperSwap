@@ -38,7 +38,8 @@ Token Address:
 1inch Protocol Examples:
 
 1. Build Limit Order: 
-    const limitOrder = await limitOrderBuilder.buildLimitOrder({
+   
+   const limitOrder = await limitOrderBuilder.buildLimitOrder({
         makerAssetAddress: '0x4F96Fe3b7A6Cf9725f59d353F723c1bDb64CA6Aa',
         takerAssetAddress: '0xd0a1e359811322d97991e03f863a0c30c2cf029c',
         makerAddress: walletAddress,
@@ -49,16 +50,19 @@ Token Address:
         
     });
 2. Limit Order Typed Data:
+    
     const limitOrderTypedData = await limitOrderBuilder.buildLimitOrderTypedData(
         limitOrder
     );
 3. Sign Limit Order:
+    
     const limitOrderSignature = await privateKeyProviderConnector.signTypedData(
         walletAddress,
         limitOrderTypedData
     );
 
 4. Fill Limit Order:
+     
      const callData = await limitOrderProtocolFacade.fillLimitOrder(
         order,
         signature,
@@ -68,6 +72,7 @@ Token Address:
     );
 
 5. Send Limit Order:
+    
     const res = await contract.methods.fillOrder(order,
             signature,
             makerAmount,
