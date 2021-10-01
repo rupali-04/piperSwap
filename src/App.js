@@ -16,7 +16,7 @@ class App extends Component {
   async loadBlockchainData() {
     const web3 = window.web3
 
-    const accounts = 'await web3.eth.getAccounts()'
+    const accounts = await web3.eth.getAccounts()
     this.setState({ account: accounts[0] })
 
     const networkId = 42
@@ -49,7 +49,7 @@ class App extends Component {
     if(tokenFarmData) {
       const tokenFarm = new web3.eth.Contract(TokenFarm.abi, tokenFarmData.address)
       this.setState({ tokenFarm })
-      let stakingBalance = await tokenFarm.methods.stakingBalance(this.state.account).call()
+      let stakingBalance = await tokenFarm.methods.investingBalance(this.state.account).call()
       this.setState({ stakingBalance: stakingBalance.toString() })
     } else {
       window.alert('TokenFarm contract not deployed to detected network.')
@@ -74,7 +74,7 @@ class App extends Component {
   stakeTokens = (amount) => {
     this.setState({ loading: true })
     this.state.daiToken.methods.approve(this.state.tokenFarm._address, amount).send({ from: this.state.account }).on('transactionHash', (hash) => {
-      this.state.tokenFarm.methods.stakeTokens(amount).send({ from: this.state.account }).on('transactionHash', (hash) => {
+      this.state.tokenFarm.methods.investTokens(amount).send({ from: this.state.account }).on('transactionHash', (hash) => {
         this.setState({ loading: false })
       })
     })
@@ -82,7 +82,7 @@ class App extends Component {
 
   unstakeTokens = (amount) => {
     this.setState({ loading: true })
-    this.state.tokenFarm.methods.unstakeTokens().send({ from: this.state.account }).on('transactionHash', (hash) => {
+    this.state.tokenFarm.methods.withdraw().send({ from: this.state.account }).on('transactionHash', (hash) => {
       this.setState({ loading: false })
     })
   }

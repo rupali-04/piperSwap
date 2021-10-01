@@ -16,8 +16,8 @@ class Main extends Component {
           </thead>
           <tbody>
             <tr>
-              <td>{window.web3.utils.fromWei(this.props.stakingBalance, 'Ether')} mDAI</td>
-              <td>{window.web3.utils.fromWei(this.props.dappTokenBalance, 'Ether')} DAPP</td>
+              <td>{(window.web3.utils.fromWei(this.props.stakingBalance, 'Ether')).toString()} DAI</td>
+              <td>{(window.web3.utils.fromWei(this.props.piperTokenBalance, 'Ether')).toString()} PToken</td>
             </tr>
           </tbody>
         </table>
@@ -49,7 +49,7 @@ class Main extends Component {
                 <div className="input-group-append">
                   <div className="input-group-text">
                     <img src={dai} height='32' alt=""/>
-                    &nbsp;&nbsp;&nbsp; mDAI
+                    &nbsp;&nbsp;&nbsp; DAI
                   </div>
                 </div>
               </div>
